@@ -1,0 +1,320 @@
+      <!-- Section 5  -->
+      <form name="form">
+        <div class="rowButton">
+          <div class="columnFruit">
+            <input class="button" type="button" id="banana" value="B" onclick="calcNumbers(banana.id)"/>
+          </div>
+          <div class="columnFruit">
+            <input class="button" type="button" id="durian" value="D" onclick="calcNumbers(banana.id)"/>
+          </div>
+          <div class="columnFruit">
+            <input class="button" type="button" id="chilli" value="C" onclick="calcNumbers(banana.id)"/>
+          </div>
+          <div class="columnFruit">
+            <input class="button" type="button" id="pineapple" value="P" onclick="calcNumbers(banana.id)"/>
+          </div>
+          <div class="columnFruit">
+            <input class="button" type="button" id="coconut" value="C" onclick="calcNumbers(banana.id)"/>
+          </div>
+        </div>
+      </form>
+
+      <!-- Section 4  (Crop Percentage of Yield: Hidden for now-->
+      <div>
+        <div class="slidecontainer2">
+          <h4>% of yield</h4>
+          <input class="cropYieldDisplay" type="text" placeholder="100%" 
+          name="cropYieldDisplay" id="cropYieldDisplay"/>
+          <input
+            type="range"
+            name="cropYield"
+            min="80"
+            max="100"
+            value="100"
+            step="5"
+            class="slider"
+            id="cropYield"
+            onchange="displayCropYield()"
+          />
+        </div>
+      </div>
+
+      <!--- Their CSS --->
+        input[type=button] {
+      width: 40px;
+      height: 40px;
+      float: left;
+      margin: 5px;
+      box-sizing: border-box;
+      background: #ecedef;
+      border: none;
+      font-size: 24px;
+      line-height: 30px;
+      border-radius: 50%;
+      font-weight: 700;
+      color: #5E5858;
+      cursor: pointer;
+      
+  }
+
+  .btn{
+    width: 40px;
+    height: 40px;
+    float: left;
+    margin: 5px;
+    box-sizing: border-box;
+    background: #ecedef;
+    border: none;
+    font-size: 24px;
+    line-height: 30px;
+    border-radius: 50%;
+    font-weight: 700;
+    color: #5E5858;
+    cursor: pointer;
+  }
+
+  .btn:hover{
+    color: #A63ADF;
+  }
+
+  span.banana {
+    background: "pizza.svg";
+    background-size: contain;
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+  }
+
+  .rowButton{
+    margin: 0px 0px 10px 20px
+  }
+
+  .columnFruit {
+    float: left;
+    width: 18%;
+  }
+
+  .button:hover{
+      color: #A63ADF;
+  }
+
+  //Javascript 
+  onchange="calcNumbers(cropYear.value)"
+
+  function calcNumbers() {
+
+
+    // VARIABLES
+    // ----------------------------------------------------------
+
+    var amount, percent, result;
+    var calculator = $('.container');
+    var calculatorBill = calculator.find('.displayInput');
+    var calculatorTip = calculator.find('.cropAcreSlider');
+    var calculatorResult = calculator.find('.cropROI');
+    //var tipAmount = calculator.find('.tip-amount');
+
+
+    // INIT BILL
+    // ----------------------------------------------------------
+
+    $(window).on('DOMContentLoaded', function () {
+        //tipAmount.text( calculatorTip.val() + '%' ); //not yet implemented
+        amount = calculatorBill.val() * 1;
+        percent = calculatorTip.val() * 1;
+        result = (amount/15.42) * 38.58 * ( percent / 100 );
+        cropROI.text( 'RM' + result.toFixed(2));
+    });
+
+
+    // RANGE FUNCTION
+    // ----------------------------------------------------------
+
+    calculatorTip.on('change', function () {
+
+        if ( calculatorBill.val() === '' || isNaN( calculatorBill.val() ) ) {
+            alert('Enter capital (RM) amount, please!')
+        } else {
+            amount = calculatorBill.val() * 1;
+        }
+
+        //tipAmount.text( calculatorTip.val() + '%' );
+        //percent = calculatorTip.val() * 1; //not yet implemented
+        result = (amount/15.42) * 38.58 * ( percent / 100 );
+        cropROI.text( 'RM' + result.toFixed(2));
+    });
+
+};
+
+    //function 2: if user alters the acre
+    function sampleFunctionAcre (){ //function kedua untuk "acre"
+        var acre = document.getElementById("cropAcre").value; //cropAcre
+        document.getElementById("cropAcreDisplay").value = `${acre} acre`;
+
+        //the calculated ROI crops:
+        var durianText = document.getElementById("durianROI").value; //durian-D24
+        var bananaText = document.getElementById("bananaROI").value; //banana-berangan
+        var chilliText = document.getElementById("chilliROI").value; //chilli-padi
+        var nenasText = document.getElementById("nenasROI").value; //pineapple
+        var coconutText = document.getElementById("coconutROI").value; //coconut-MATAG
+
+        var none = document.getElementById("displayInput").value; //capital-input(RM)
+        document.getElementById("displayInput").value = `${none}`;
+        var year = document.getElementById("cropYear").value; //cropYear
+        
+        if(year <= '2.5'){
+            bananaText = ((none/15.42)*35.58*20).toFixed(2);
+            bananaText = (bananaText*acre).toFixed(2);
+            bananaPercent = ((bananaText-none)/none).toFixed(2);
+            document.getElementById("bananaROI").value = `RM ${bananaText}`;
+            document.getElementById("bananaROIpercent").value = `${bananaPercent} %`;
+            chilliText = ((none/12)*5.50*2083).toFixed(2);
+            chilliText = (chilliText*acre).toFixed(2);
+            document.getElementById("chilliROI").value = `RM ${chilliText}`;
+            chilliPercent = ((chilliText-none)/none).toFixed(2);
+            document.getElementById("chilliROIpercent").value = `${chilliPercent} %`;
+            nenasText = ((none/0.4)*1.6).toFixed(2);
+            nenasText = (nenasText*acre).toFixed(2);
+            document.getElementById("nenasROI").value = `RM ${nenasText}`;
+            nenasPercent = ((nenasText-none)/none).toFixed(2);
+            document.getElementById("nenasROIpercent").value = `${nenasPercent} %`;
+            //durian & coconut not harvest yet - so dont calculate
+            document.getElementById("durianROI").value = "Not harvest yet";
+            document.getElementById("coconutROI").value = "Not harvest yet";
+        } else if ( year <= '3'){
+            bananaText = ((none/15.42)*35.58*20).toFixed(2);
+            bananaText = (bananaText*acre).toFixed(2);
+            bananaPercent = ((bananaText-none)/none).toFixed(2);
+            document.getElementById("bananaROI").value = `RM ${bananaText}`;
+            document.getElementById("bananaROIpercent").value = `${bananaPercent} %`;
+            chilliText = ((none/12)*5.50*2083).toFixed(2);
+            chilliText = (chilliText*acre).toFixed(2);
+            document.getElementById("chilliROI").value = `RM ${chilliText}`;
+            chilliPercent = ((chilliText-none)/none).toFixed(2);
+            document.getElementById("chilliROIpercent").value = `${chilliPercent} %`;
+            nenasText = ((none/0.4)*1.6).toFixed(2);
+            nenasText = (nenasText*acre).toFixed(2);
+            document.getElementById("nenasROI").value = `RM ${nenasText}`;
+            nenasPercent = ((nenasText-none)/none).toFixed(2);
+            document.getElementById("nenasROIpercent").value = `${nenasPercent} %`;
+            coconutText = ((none/31.35)*69.45).toFixed(2);
+            coconutText = (coconutText*acre).toFixed(2);
+            document.getElementById("coconutROI").value = `RM ${coconutText}`;
+            coconutPercent = ((coconutText-none)/none).toFixed(2);
+            document.getElementById("coconutROIpercent").value = `${coconutPercent} %`;
+            //durian only not harvest yet - so dont calculate
+            document.getElementById("durianROI").value = "Not harvest yet";
+        } else if (year >= '4.5'){
+            bananaText = ((none/15.42)*35.58*20).toFixed(2);
+            bananaText = (bananaText*acre).toFixed(2);
+            bananaPercent = ((bananaText-none)/none).toFixed(2);
+            document.getElementById("bananaROI").value = `RM ${bananaText}`;
+            document.getElementById("bananaROIpercent").value = `${bananaPercent} %`;
+            chilliText = ((none/12)*5.50*2083).toFixed(2);
+            chilliText = (chilliText*acre).toFixed(2);
+            document.getElementById("chilliROI").value = `RM ${chilliText}`;
+            chilliPercent = ((chilliText-none)/none).toFixed(2);
+            document.getElementById("chilliROIpercent").value = `${chilliPercent} %`;
+            nenasText = ((none/0.4)*1.6).toFixed(2);
+            nenasText = (nenasText*acre).toFixed(2);
+            document.getElementById("nenasROI").value = `RM ${nenasText}`;
+            nenasPercent = ((nenasText-none)/none).toFixed(2);
+            document.getElementById("nenasROIpercent").value = `${nenasPercent} %`;
+            coconutText = ((none/31.35)*69.45).toFixed(2);
+            coconutText = (coconutText*acre).toFixed(2);
+            document.getElementById("coconutROI").value = `RM ${coconutText}`;
+            coconutPercent = ((coconutText-none)/none).toFixed(2);
+            document.getElementById("coconutROIpercent").value = `${coconutPercent} %`;
+            durianText = ((none/50)*3700).toFixed(2);
+            durianText = (durianText*acre).toFixed(2);
+            document.getElementById("durianROI").value = `RM ${durianText}`;
+            durianPercent = ((durianText-none)/none).toFixed(2);
+            document.getElementById("durianROIpercent").value = `${durianPercent} %`;
+        }
+    }
+
+          <!-- Section 2  -->
+      <div>
+        <div class="slidecontainer">
+          <h4>Year before yield</h4>
+          <input class="cropYearDisplay" type="text" placeholder="1.5 years" 
+              name="cropYearDisplay" id="cropYearDisplay"/>
+          <input
+            type="range"
+            name="cropYear"
+            min="0.5"
+            max="5"
+            value="1.5"
+            class="slider"
+            id="cropYear"
+            step="0.5"
+            onchange="displayCropYear()"
+            onchange="sampleFunction()"
+          />
+        </div>
+      </div>
+
+      *** On off switch **
+<div class="onoffswitch">
+  <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked onclick="myFunction()">
+      <label class="onoffswitch-label" for="myonoffswitch">
+        <span class="onoffswitch-inner"></span>
+        <span class="onoffswitch-switch"></span>
+     </label>
+
+     ** Durian mouseover text **
+                   <h5 class="tooltip">Durian ROI:<span class="tooltiptext">
+                   Musang King yield fruits at least after 5 years and will continue fruit until 20 years
+                   </span></h5>
+
+** Slider **
+          <input class="cropCapital" type="text" placeholder="RM 1 500 000" 
+              name="cropCapital" id="cropCapitalDisplay"/>
+          <input
+            type="range"
+            name="cropCapital"
+            min="50000"
+            max="5000000"
+            value="1500000"
+            class="cropAcreSlider"
+            id="cropCapital"
+            step="50000"
+            onchange="displayCropCapital()"
+          />
+
+** Slider Acre **
+            <input class="cropAcreDisplay" type="text" placeholder="5 acre" 
+                name="cropAcreDisplay" id="cropAcreDisplay"/>
+            <input
+              type="range"
+              name="cropAcre"
+              min="5"
+              max="100"
+              value="5"
+              class="cropAcreSlider"
+              id="cropAcre"
+              step="5"
+              onchange="displayCropAcre()"
+            />
+
+        <!-- On Off Switch & Button -->
+        <div class="slidecontainer">
+          <div class="rowTry">
+            <div class="column">
+              <div class="onoffswitch">
+              <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked onclick="myFunction()" onchange="calculateCrop()">
+              <label class="onoffswitch-label" for="myonoffswitch">
+                <span class="onoffswitch-inner"></span>
+                <span class="onoffswitch-switch"></span>
+             </label>
+            </div></div>
+              <div class="column">
+                <br>
+                </div>
+            <div class="column">
+                <button class="buttonCalc" onclick="dropDetails()">
+                <span>More details ></span>
+                </button>
+              </div>
+              </div>
+            </div>
