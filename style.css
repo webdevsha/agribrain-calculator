@@ -1,0 +1,409 @@
+/* CSS files add styling rules to your content */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 2em;
+  }
+  
+  h1 {
+    font-style: italic;
+    color: #373fff;
+  }
+
+  .heading {
+    margin-top: 20px;
+    padding-top: 20px;
+    margin-left: 20px;
+  }
+
+  h5 {
+    color: white;
+  }
+  
+  h4{
+    font-style: italic;
+  }
+  
+  .container {
+      background: #fff;
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.2);
+      border-radius: 14px;
+      width: 550px;
+      height: 350px;
+  }
+  
+  .slack {
+    margin: -15px 0px 0px 0px;
+  }
+
+  .display {
+      background: #A63ADF;
+      border-radius: 14px 14px 0px 0px;
+      padding-bottom: 20px;
+      height: auto;
+  }
+
+   /* Column for switch */ 
+  .slidecontainer{ 
+    margin: 20px 40px 10px 20px;
+  }
+  
+  .slidecontainer2{
+    margin: -25px 40px 10px 20px;
+  }
+  
+  .slidecontainer3{
+    margin: 0px 40px 10px 20px;
+  }
+
+  .slider {
+    margin: -10px 20px 10px 20px;
+    width: 100px;
+    -webkit-appearance: none;
+    height: 3px;
+    background: grey;
+    opacity: 0.7;
+    transition: opacity .4s;
+  }
+  
+  .slider::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    background: #A63ADF;
+    cursor: pointer;
+  }
+  
+  .slider:hover {
+    opacity: 0.3;
+    height: 3px;
+  }
+
+  .cropAcreSlider {
+    -webkit-appearance: none;
+    height: 3px;
+    background: grey;
+    opacity: 0.7;
+    transition: opacity .4s;
+  }
+
+  .row-display {
+    margin: -80px 0px 0px 0px;
+  }
+
+  .cropDisplay {
+    box-sizing: border-box;
+    border: none;
+    background: none;
+    color: #10564F;
+    font-weight: 400;
+    font-size: 14px;
+  }
+  
+  .cropAcreSlider::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    background: #10564F;
+    cursor: pointer;
+  }
+  
+  .cropAcreSlider:hover {
+    opacity: 0.3;
+    height: 3px;
+  }
+  
+  .row3 {
+    margin: 0px 20px 10px 20px;
+  }
+
+  .rowBanana{
+    margin: 10px 0px 0px 20px;
+    background-color: #10564F;
+  }
+
+  .columnBanana {
+    float: left;
+    width: 50%;
+  }
+
+  .tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: dotted white;
+  }
+
+  .tooltip  .tooltiptext {
+    visibility: hidden;
+    width: 150px;
+    background-color: #FFCD00;
+    text-align: left; 
+    color: black;
+    border-radius: 6px;
+    padding: 5px 5px 5px 5px;
+    position: absolute;
+    z-index: 0;
+    box-shadow: rgba(0,0,0,0.2);
+  }
+
+  .tooltip:hover .tooltiptext{
+    visibility: visible;
+  }
+
+  .rowChilli{
+    margin: 10px 0px 0px 20px;
+    background-color: #10564F;
+  }
+
+  .columnChilli {
+    float: left;
+    width: 50%;
+  }
+
+  .displayBottom {
+    position:bottom;
+    background: #10564f;
+    padding-bottom: 100px;
+    height: 200px;
+}
+
+.displayBottomButton {
+  position:bottom;
+  background: #FFCD00;
+  padding-bottom: 20px;
+  border-radius: 0px 0px 14px 14px;
+  text-align: center;
+  padding: 5px;
+}
+ 
+  .rowBottom{
+    margin: 0px 0px 20px 20px;
+    position: bottom;
+    background-color: #10564F;
+  }
+
+  .columnBottom {
+    float: left;
+    width: 50%;
+  }
+
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .bananaROI {
+    float: left;
+    margin: -30px 0px 0px 0px;
+    box-sizing: border-box;
+    border: none;
+    background: none;
+    color: #ffffff;
+    text-align: left;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 60px;
+  }
+
+  .bananaROIpercent {
+    float: left;
+    margin: -30px 0px 0px 0px;
+    box-sizing: border-box;
+    border: none;
+    background: none;
+    color: #ffffff;
+    text-align: left;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 60px;
+  }
+
+  .durianROI {
+    float: left;
+    margin: -30px 0px 0px 0px;
+    box-sizing: border-box;
+    border: none;
+    background: none;
+    color: white;
+    text-align: left;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 60px;
+  }
+
+  .durianROIpercent {
+    float: left;
+    margin: -30px 0px 0px 0px;
+    box-sizing: border-box;
+    border: none;
+    background: none;
+    color: white;
+    text-align: left;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 60px;
+  }
+
+  .chilliROI {
+    float: left;
+    margin: -30px 0px 0px 0px;
+    box-sizing: border-box;
+    border: none;
+    background: none;
+    color: white;
+    text-align: left;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 60px;
+  }
+
+  .chilliROIpercent {
+    float: left;
+    margin: -30px 0px 0px 0px;
+    box-sizing: border-box;
+    border: none;
+    background: none;
+    color: white;
+    text-align: left;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 60px;
+  }
+
+  .nenasROI {
+    float: left;
+    margin: -30px 0px 0px 0px;
+    box-sizing: border-box;
+    border: none;
+    background: none;
+    color: white;
+    text-align: left;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 60px;
+  }
+
+  .nenasROIpercent {
+    float: left;
+    margin: -30px 0px 0px 0px;
+    box-sizing: border-box;
+    border: none;
+    background: none;
+    color: white;
+    text-align: left;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 60px;
+  }
+
+  .coconutROI {
+    float: left;
+    margin: -30px 0px 0px 0px;
+    box-sizing: border-box;
+    border: none;
+    background: none;
+    color: white;
+    text-align: left;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 60px;
+  }
+
+  .coconutROIpercent {
+    float: left;
+    margin: -30px 0px 0px 0px;
+    box-sizing: border-box;
+    border: none;
+    background: none;
+    color: white;
+    text-align: left;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 60px;
+  }
+
+  /* Yuuhuu here is the on-off */
+  .column-headingright {
+    padding: 20px 80px 0px 80px;
+  }
+
+  .onoffswitch {
+    columns: 2 100px;
+    column-gap: 2em;
+    position: relative; width: 150px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+.onoffswitch-checkbox {
+    display: none;
+}
+.onoffswitch-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 0px solid #999999; border-radius: 20px;
+}
+.onoffswitch-inner {
+    display: block; width: 200%; margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+    display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 31px;
+    font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif;
+    box-sizing: border-box;
+}
+.onoffswitch-inner:before {
+    content: "Long term";
+    padding-left: 10px;
+    background-color: #FFCD00; color: black;
+}
+.onoffswitch-inner:after {
+    content: "Short term corps";
+    padding-right: 10px;
+    padding-left: 10px;
+    background-color: #E55B13; color: white;
+    text-align: right;
+}
+.onoffswitch-switch {
+    display: block; width: 20px; margin: 5px;
+    background: #FFFFFF;
+    position: absolute; top: 0; bottom: 0;
+    right: 107px;
+    border: 0px solid; border-radius: 20px;
+    transition: all 0.3s ease-in 0s; 
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    right: 0px; 
+}
+
+.buttonBottom {
+  padding: 5px;
+  border-radius: 20px;
+  justify-content: center;
+  cursor: pointer;
+  width: 120px;
+  font-size: 14px;
+}
+
+.buttonBottom:hover {
+  transition: all 0.4s ease;
+  font-weight: bolder;
+}
+
+#displayDurian, #displayCoconut {
+  display: none;
+}
+
+.rowTry{
+  columns: 3;
+  column-gap: 1em;
+}
+
+.row{
+  columns: 3;
+}
+
+.row-heading {
+  margin: 20px 40px 10px 20px;
+  columns: 2;
+}

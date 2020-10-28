@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- My header  -->
+  <head>
+    <title>AgriBrain Calculator | Webdevsha</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/style.css" />
+    <link href="https://fonts.googleapis.com/css" rel="stylesheet"/>
+    <script src="/script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        $("button").click(function(){
+          $("p").toggle();
+        });
+      });
+      </script>
+  </head>
+
+  <!-- My body  -->
+  <body>
+    <div class="container">
+
+  <!-- The header -->
+        <div class="row-heading">
+          <div class="column-heading-left">
+            <h2>AgriBrain Calculator</h2>
+          </div>
+          <div class="column-headingright">
+            <div class="onoffswitch">
+              <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked onclick="myFunction()" onchange="calculateCrop()">
+              <label class="onoffswitch-label" for="myonoffswitch">
+                <span class="onoffswitch-inner"></span>
+                <span class="onoffswitch-switch"></span>
+             </label>
+          </div>
+        </div> </div>
+
+
+        <!-- On Off Switch & Button Header -->
+        <div class="slidecontainer">
+          <div class="row">
+            <div class="slack">
+              <p>Capital to put in: </p>
+            </div>
+            <div class="column">
+              <p>Total acre(s): </p>
+              </div>
+              <div class="column">
+                <p>Yield percentage: </p>
+                </div>
+            </div>
+          </div>
+
+    <!-- On Off Switch & Button Header -->
+        <div class="slidecontainer2">
+          <div class="row">
+            <div class="column">
+              <input type="text" placeholder="RM 1, 500, 000" id="cropCapitalDisplay" class="cropDisplay" onchange="displayCropCapital()"/>
+            </div>
+            <div class="column">
+              <input type="text" placeholder="5 Acre" id="cropAcreDisplay" class="cropDisplay"/>
+              </div>
+              <div class="column">
+                <input type="text" placeholder="85%" id="cropYieldDisplay" class="cropDisplay"/>
+                </div>
+            </div>
+          </div>
+
+    <!-- On Off Switch & Button Slider -->
+        <div class="slidecontainer3">
+          <div class="row">
+            <div class="column">
+              <input
+              type="range"
+              name="cropCapital"
+              min="50000"
+              max="5000000"
+              value="1500000"
+              class="cropAcreSlider"
+              id="cropCapital"
+              step="50000"
+              onchange="displayCropCapital()"
+            />
+            </div>
+            <div class="column">
+              <input
+              type="range"
+              name="cropAcre"
+              min="5"
+              max="20"
+              value="10"
+              class="cropAcreSlider"
+              id="cropAcre"
+              step="5"
+              onchange="displayCropAcre()"
+            />
+              </div>
+              <div class="column">
+                <input
+                type="range"
+                name="cropYield"
+                min="70"
+                max="100"
+                value="85"
+                class="cropAcreSlider"
+                id="cropYield"
+                step="5"
+                onchange="displayCropYield()"
+              />
+                </div>
+            </div>
+          </div>
+
+      <!-- Section 4  (Crop Percentage of Yield: Hidden for now-->
+      <!-- Stored in dump.txt-->
+
+      <!-- Section 5  -->
+      <form name="form">
+        <div class="displayBottom" >
+          <!-- Banana -->
+            <div class="rowBanana" id= "displayBanana">
+                <div class="columnBanana">
+                  <h5>Banana ROI:</h5>
+                  <input type="text" id="bananaROI" class="bananaROI" placeholder="RM 0">
+                </div>
+                <div class="columnBanana">
+                  <h5>ROI percent:</h5>
+                  <input
+                        class="bananaROIpercent"
+                        type="text"
+                        placeholder="0%"
+                        name="bananaROIpercent"
+                        id="bananaROIpercent"
+                    />
+                </div>
+              </div>
+        
+          <!-- Durian -->
+          <div class="rowBanana" id= "displayDurian">
+            <div class="columnBanana">
+              <h5>Durian ROI:</h5>
+              <input type="text" id="durianROI" class="durianROI" placeholder="RM 0">
+            </div>
+            <div class="columnBanana">
+              <h5>ROI percent:</h5>
+              <input
+                    class="durianROIpercent"
+                    type="text"
+                    placeholder="0%"
+                    name="durianROIpercent"
+                    id="durianROIpercent"
+                />
+            </div>
+          </div>
+
+           <!-- Chilli -->
+           <div class="rowChilli" id= "displayChilli">
+            <div class="columnChilli">
+              <h5>Chilli ROI:</h5>
+              <input type="text" id="chilliROI" class="chilliROI" placeholder="RM 0">
+            </div>
+            <div class="columnBanana">
+              <h5>ROI percent:</h5>
+              <input
+                    class="chilliROIpercent"
+                    type="text"
+                    placeholder="0%"
+                    name="chilliROIpercent"
+                    id="chilliROIpercent"
+                />
+            </div>
+          </div>
+
+          <!-- Pineapple -->
+          <div class="rowBanana" id= "displayNenas">
+            <div class="columnBanana">
+              <h5>Pineapple ROI:</h5>
+              <input type="text" id="nenasROI" class="nenasROI" placeholder="RM 0">
+            </div>
+            <div class="columnBanana">
+              <h5>ROI percent:</h5>
+              <input
+                    class="nenasROIpercent"
+                    type="text"
+                    placeholder="0%"
+                    name="nenasROIpercent"
+                    id="nenasROIpercent"
+                />
+            </div>
+          </div>
+
+          <!-- Coconut -->
+          <div class="rowBanana" id= "displayCoconut" >
+            <div class="columnBanana">
+              <h5>Coconut ROI:</h5>
+              <input type="text" id="coconutROI" class="coconutROI" placeholder="RM 0">
+            </div>
+            <div class="columnBanana">
+              <h5>ROI percent:</h5>
+              <input
+                    class="coconutROIpercent"
+                    type="text"
+                    placeholder="0%"
+                    name="coconutROIpercent"
+                    id="coconutROIpercent"
+                />
+            </div>
+          </div>
+          <!-- Still the same container  -->
+      </div>
+      <!-- Section 6  -->
+      <div class="displayBottomButton" >
+        <button>Toggle between hiding and showing the paragraphs</button>
+        <p>This is a paragraph with little content.</p>
+        <p>This is another small paragraph.</p>
+            </div>    
+      
+    </div>
+    <!-- Other stuffs  -->
+  </body>
+
+  <!-- My footer  -->
+  <footer>
+  </footer>
+</html>
